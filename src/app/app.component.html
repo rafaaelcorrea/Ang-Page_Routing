@@ -1,10 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a routerLink="/">Home</a></li>
-        <li role="presentation"><a routerLink="/servers">Servers</a></li>
-        <li role="presentation"><a [routerLink]="['/users']">Users</a></li>
+      <ul class="nav nav-tabs"> <!--Inside this property "rounterLinkActive" have a class CSS or 
+      Bootstrap ( class active ) for mark the tab current tab.-->
+        <li role="presentation" class="active" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact:true}"> <!--property-binding who take default behavior
+         and  just let one  active tab each click/choosen. ( object JS for set value this pro.binding)-->
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/servers">Servers</a></li>
+        <li role="presentation"routerLinkActive="active">
+          <a [routerLink]="['/users']">Users</a></li>
       </ul>
     </div>
   </div>
